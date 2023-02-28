@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ListChampionsComponent } from './list-champions/list-champions.component';
 
 const routes: Routes = [
-  {path: 'champions/:username', component: ListChampionsComponent},
+  {path: 'static/champions/:username', component: ListChampionsComponent},
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo:'home', pathMatch: 'full'}
 ];
