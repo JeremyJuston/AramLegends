@@ -1,3 +1,25 @@
-<p *ngFor="let champion of championsList">
-    {{champion}}
-</p>
+<table>
+    <thead>
+      <tr>
+        <th (click)="sort(0)">Champions</th>
+        <th (click)="sort(1)">Damage dealt</th>
+        <th (click)="sort(2)">Damage taken</th>
+        <th (click)="sort(3)">Damage mitigated</th>
+        <th (click)="sort(4)">CC total time</th>
+        <th (click)="sort(5)">CC score</th>
+        <th (click)="sort(6)">Games played</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of champs | sortBy:sortBy:reverse">
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+        <td>{{row[4]}}</td>
+        <td>{{row[5]}}</td>
+        <td>{{row[6]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
