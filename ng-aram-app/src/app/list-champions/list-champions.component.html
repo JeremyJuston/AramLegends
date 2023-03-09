@@ -1,17 +1,23 @@
+<h3>{{username}}</h3>
+
 <table>
     <thead>
-      <tr>
+      <tr class="table-header">
         <th (click)="sort(0)">Champions</th>
         <th (click)="sort(1)">Damage dealt</th>
         <th (click)="sort(2)">Damage taken</th>
         <th (click)="sort(3)">Damage mitigated</th>
-        <th (click)="sort(4)">CC total time</th>
-        <th (click)="sort(5)">CC score</th>
-        <th (click)="sort(6)">Games played</th>
+        <th (click)="sort(4)">CC score</th>
+        <th (click)="sort(5)">CC total time</th>
+        <th (click)="sort(6)">Kills</th>
+        <th (click)="sort(7)">Deaths</th>
+        <th (click)="sort(8)">Assists</th>
+        <th (click)="sort(9)">Winrate</th>
+        <th (click)="sort(10)">Games played</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of champs | sortBy:sortBy:reverse">
+      <tr *ngFor="let row of champs | sortBy:sortBy:reverse; let i = index" [class.odd-row]="i % 2 == 1">
         <td>{{row[0]}}</td>
         <td>{{row[1]}}</td>
         <td>{{row[2]}}</td>
@@ -19,7 +25,11 @@
         <td>{{row[4]}}</td>
         <td>{{row[5]}}</td>
         <td>{{row[6]}}</td>
+        <td>{{row[7]}}</td>
+        <td>{{row[8]}}</td>
+        <td>{{row[9]}} %</td>
+        <td>{{row[10]}}</td>
       </tr>
     </tbody>
-  </table>
+</table>
   

@@ -18,8 +18,7 @@ def not_found_error(error):
 
 @app.route("/loading/<id>")
 def get_data(id):
-    data = champions.get_champions_list2(id)
-    #data = ["Irelia", "Jayce", "Zed perso broken", "Garen fine"]
+    data = champions.get_champions_list(id)
     return data
 
 

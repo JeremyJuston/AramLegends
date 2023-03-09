@@ -11,20 +11,23 @@ import { ActivatedRoute } from '@angular/router';
 export class ListChampionsComponent {
   championsList: string[] = ['Ezreal', 'Lux', 'Garen'];
   champs: any;
+  username: string|null = "Test";
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    const username: string|null = this.route.snapshot.paramMap.get('username')
-    this.http.get(`loading/${username}`).subscribe((data: any) => {
+    
+    this.username = this.route.snapshot.paramMap.get('username')
+    this.http.get(`loading/${this.username}`).subscribe((data: any) => {
       this.champs = data;
     })
     /**
-    this.champs = [  ['John', 'Doe', 'john.doe@example.com', '35', 'Male', 'New York'],
-    ['Jane', 'Smith', 'jane.smith@example.com', '27', 'Female', 'Los Angeles'],
-    ['Bob', 'Johnson', 'bob.johnson@example.com', '42', 'Male', 'Chicago'],
-    ['Alice', 'Williams', 'alice.williams@example.com', '21', 'Female', 'Houston']
+    this.champs = [  ['John', 'Doe', 'john.doe@example.com', '35', 'Male', 'New York', '25'],
+    ['Jane', 'Smith', 'jane.smith@example.com', '27', 'Female', 'Los Angeles', '2'],
+    ['Bob', 'Johnson', 'bob.johnson@example.com', '42', 'Male', 'Chicago', '5'],
+    ['Alice', 'Williams', 'alice.williams@example.com', '21', 'Female', 'Houston', '40']
   ];*/
+    console.log(this.champs);
   }
 
   
@@ -40,7 +43,4 @@ export class ListChampionsComponent {
       this.reverse = true;
     }
   }
-
-
-
 }

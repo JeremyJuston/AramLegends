@@ -94,8 +94,22 @@ def test():
 
 """
 
+def test2():
+
+    cass.set_riot_api_key('RGAPI-83fc614a-c91b-4ed6-92d8-0f6b61a02ac5')
+    me = cass.get_summoner(name = "Seieki No Jutsu", region="EUW")
+
+    matches = me.match_history[10:11]
+
+    for match in matches:
+        print(match.participants[me].stats.kills)
+        print(match.participants[me].stats.deaths) 
+        print(match.participants[me].stats.assists)
+        print(match.participants[me].stats.win)
+
+
 def main():
     print("hello")
-    test()
+    test2()
 
 main()

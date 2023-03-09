@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+tr:nth-child(odd) {
+    background-color: #ebebeb;
+}
+  
+.odd-row {
+    background-color: #ffffff;
+}
+
+tr.table-header {
+    background-color: #4d96d1;
+    color: #050505;
+    cursor: pointer;
+}
+
+th, td {
+    text-align: center;
+    border: 1px solid #d0d0d0;
+}
