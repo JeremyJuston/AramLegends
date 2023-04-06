@@ -43,6 +43,7 @@ def create_list_tot(me, matches):
     list_deaths = []
     list_assists = []
     list_win = []
+    list_time = []
     
 
     for match in matches:
@@ -61,8 +62,9 @@ def create_list_tot(me, matches):
             list_deaths.append(match.participants[me].stats.deaths) 
             list_assists.append(match.participants[me].stats.assists)
             list_win.append(int(match.participants[me].stats.win))
+            list_time.append(match.participants[me].stats.time_played)
 
-    list_tot = [list_dmg_d, list_dmg_t, list_dmg_m, list_ccs, list_tcc, list_kills, list_deaths, list_assists, list_win]
+    list_tot = [list_dmg_d, list_dmg_t, list_dmg_m, list_ccs, list_tcc, list_kills, list_deaths, list_assists, list_time, list_win]
 
 
     return list_champs, list_tot
@@ -108,7 +110,7 @@ def list_to_return(list_set_champs, list_tot):
     for i in range(len(list_set_champs)):
         list_to_return.append([list_set_champs[i]])
 
-        for j in range(len(list_tot[i])-2):
+        for j in range(len(list_tot[i]) - 2):
             decimales = 0
             if j > 5 and j < 9:
                 decimales = 1
